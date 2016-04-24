@@ -1,0 +1,29 @@
+
+body {
+	background-image: url(../images/bgimage.jpg);
+}
+
+h1 {
+	text-align: center;
+	color: white;
+}
+
+h3 {
+	text-align: center;
+}
+
+.jumbotron {
+	opacity: 0.3;
+}
+
+.gameBoard {
+	background-color: grey;
+	padding-top: 5%;
+	padding-bottom: 5%;
+	opacity: 0.3;
+}
+
+img {
+	text-align: center;
+	padding: 20px;
+}
