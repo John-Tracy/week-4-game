@@ -16,14 +16,44 @@ h3 {
 	opacity: 0.3;
 }
 
+.imgHolder {
+	float: left;
+	display: block;
+	width: 200px;
+	height: 200px;
+	background-color: #777777;
+	opacity: 1;
+	margin-left: 2.5%;
+	margin-right: 2.5%;
+	text-align: center;
+}
+
 .gameBoard {
 	background-color: grey;
 	padding-top: 5%;
 	padding-bottom: 5%;
-	opacity: 0.3;
+	text-align: center;
+	opacity: 0.8;
 }
 
 img {
 	text-align: center;
 	padding: 20px;
+}
+
+.imgHolder p {
+	text-align: center;
+	color: white;
+}
+.imgHolder img {
+	padding: 0;
+}
+#theCenter {
+	text-align: center;
+}
+#userAttack {
+	
+}
+#enemyAttack {
+	text-align: center;
 }

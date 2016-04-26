@@ -16,18 +16,42 @@
 		<div class="container">
 			<div class="container" ><h3>Choose Your Path...</h3></div>
 			<div class="row" id="calmArea">
-				<div class="col-md-12 gameBoard"  ><img id="apic" src="http://placehold.it/150x150"><img id="apic2" src="http://placehold.it/150x150"><img id="apic3" src="http://placehold.it/150x150"></div>
-		</div>
+				<div class="col-md-12 gameBoard">
+					<div class="imgHolder" id="jarDiv">
+						<p>Jar Jar binks</p>
+						<img id="jarPic"src="assets/images/jarjarimg.jpg">
+						<p id="jarhp"></p>
+					</div>
+					<div class="imgHolder" id="darthDiv">
+						<p>Darth Vader</p>
+						<img id="darthPic" src="assets/images/darthimg.jpg">
+						<p id="darthhp"></p>
+					</div>
+					<div class="imgHolder" id="soloDiv">
+						<p>Han Solo</p>
+						<img id="soloPic" src="assets/images/soloimg.jpg">
+						<p id="hanhp"></p>
+					</div>
+					<div class="imgHolder" id="lukeDiv">
+						<p>Luke Skywalker</p>
+						<img id="lukePic" src="assets/images/lukeimg.jpg">
+						<p id="lukehp"></p>
+					</div>
+				</div>
 	</div>
 	<div class="container">
 		<div class="row">
   			<div class="col-xs-6 col-md-5" id="userAttack"></div>
- 	 		<div class="col-xs-6 col-md-2"><h1>VS</h1></div>
+ 	 		<div class="col-xs-6 col-md-2" id="theCenter">
+ 	 		<h1>VS</h1>
+ 	 		<button type="button" class="btn btn-default" id="theHit">Attack</button>
+ 	 		</div>
   			<div class="col-xs-6 col-md-5" id="enemyAttack"></div>
 		</div>
 	</div>
 	<div class="container">
 		<div class="row">
+			<h3>Choose your Opponent Below</h3>
 			<div class="col-md-12 gameBoard" id="defenderArea"></div>
 		</div>
 	</div>
