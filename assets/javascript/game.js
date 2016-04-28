@@ -21,17 +21,17 @@ var gameObj = {
 							},
 
 						darthClicked: function() {
-							$('#enemyAttack').append(this.enemyDarth);
+							$('#enemyAttack').html(this.enemyDarth);
 
 							},
 
 						soloClicked: function() {
-							$('#enemyAttack').append(this.enemyHan);
+							$('#enemyAttack').html(this.enemyHan);
 
 							},
 
 						lukeClicked: function() {
-							$('#enemyAttack').append(this.enemyLuke);
+							$('#enemyAttack').html(this.enemyLuke);
 						}
 
 							
@@ -56,17 +56,17 @@ var gameObj = {
 							},
 
 						jarClicked: function() {
-							$('#enemyAttack').append(this.enemyJar);
+							$('#enemyAttack').html(this.enemyJar);
 
 							},
 
 						soloClicked: function() {
-							$('#enemyAttack').append(this.enemyHan);
+							$('#enemyAttack').html(this.enemyHan);
 
 							},
 
 						lukeClicked: function() {
-							$('#enemyAttack').append(this.enemyLuke);
+							$('#enemyAttack').html(this.enemyLuke);
 						}
 							},
 						
@@ -76,9 +76,34 @@ var gameObj = {
 						health: 200,
 						attack: 3,
 						counter: 20,
+						userPick: $('#soloDiv'),
+						enemyJar: $('#jarDiv'),
+						enemyDarth: $('#darthDiv'),
+						enemyLuke: $('#lukeDiv'),					
+
 						whenClicked: function() {
 
-							}
+							$('#userAttack').append(this.userPick);
+							$('#defenderArea').append(this.enemyDarth, this.enemyLuke, this.enemyJar);
+							$('#calmArea').empty();
+							
+							},
+
+						darthClicked: function() {
+							$('#enemyAttack').html(this.enemyDarth);
+
+							},
+
+						jarClicked: function() {
+							$('#enemyAttack').html(this.enemyJar);
+
+							},
+
+						lukeClicked: function() {
+							$('#enemyAttack').html(this.enemyLuke);
+						}
+
+							
 						},
 
 						{	
@@ -86,13 +111,41 @@ var gameObj = {
 						health: 200,
 						attack: 2,
 						counter: 30,
+						userPick: $('#lukeDiv'),
+						enemyJar: $('#jarDiv'),
+						enemyHan: $('#soloDiv'),
+						enemyDarth: $('#darthDiv'),						
+
 						whenClicked: function() {
+
+							$('#userAttack').append(this.userPick);
+							$('#defenderArea').append(this.enemyDarth, this.enemyHan, this.enemyJar);
+							$('#calmArea').empty();
 							
-							}
+							},
+
+						darthClicked: function() {
+							$('#enemyAttack').html(this.enemyDarth);
+
+							},
+
+						jarClicked: function() {
+							$('#enemyAttack').html(this.enemyJar);
+
+							},
+
+						soloClicked: function() {
+							$('#enemyAttack').html(this.enemyHan);
 						}
 
+					}
+							
+							
+						
 			],
-		// only if user is jar jar	
+
+
+		// only if user is jarjar vs. darth vader	
 			jarVSdarth: function() {
 				 this.charArray[1].health -= this.charArray[0].attack;
 				 $('#darthhp').html('HP: ' + this.charArray[1].health);
@@ -108,7 +161,7 @@ var gameObj = {
 				 }
 			},
 
-		// only if user is darth vader	
+		// only if user is darth vader vs jarjar	
 			darthVSjar: function() {
 				 this.charArray[0].health -= this.charArray[1].attack;
 				 $('#jarhp').html('HP: ' + this.charArray[0].health);
@@ -190,7 +243,7 @@ $(document).ready(function() {
 			gameObj.charArray[1].jarClicked();
 
 			$('#theHit').on('click', function(){
-				gameObj.darthVSjar();
+				gameObj.darthVSjar();					// need to fix these and add more
 			});
 		});
 
@@ -208,7 +261,73 @@ $(document).ready(function() {
 		}
 	});
 
-	
+// Click function(s) in the case that Han solo is picked	
+	$('#soloPic').on('click', function() {
+		if(solo == true){
+		jarjar = false;
+		darth = false;
+		luke = false;
+
+		gameObj.charArray[2].whenClicked();
+
+		$('#jarPic').on('click', function(){
+			gameObj.charArray[2].jarClicked();
+
+			$('#theHit').on('click', function(){
+				gameObj.darthVSjar();				// need to fix these and add more
+			});
+		});
+
+
+
+		$('#darthPic').on('click', function(){
+			gameObj.charArray[2].darthClicked();
+		});
+
+
+
+		$('#lukePic').on('click', function(){
+			gameObj.charArray[2].lukeClicked();
+		});
+		}
+	});	
+
+// if luke is picked by user
+	$('#lukePic').on('click', function() {
+		if(luke == true){
+		jarjar = false;
+		darth = false;
+		solo = false;
+
+		gameObj.charArray[3].whenClicked();
+
+		$('#jarPic').on('click', function(){
+			gameObj.charArray[3].jarClicked();
+
+			$('#theHit').on('click', function(){
+				gameObj.darthVSjar();				// need to fix these and add more
+			});
+		});
+
+
+
+		$('#darthPic').on('click', function(){
+			gameObj.charArray[3].darthClicked();
+		});
+
+
+
+		$('#soloPic').on('click', function(){
+			gameObj.charArray[3].soloClicked();
+		});
+		}
+	});
+
+
+
+
+
+
 });
 
 
