@@ -144,10 +144,8 @@ $(document).ready(function() {
 		var timer;
 		var greyBar = $('#transparent');
 
-
-
 $('#resetGame').on('click', function() {
-	
+
 	$('#calmArea').append(greyBar);
 	// puts all character Divs where they started.
 	var darthRe = $('#darthDiv');
@@ -508,9 +506,6 @@ var soloVSdarth = function() {
 		darth = false;
 		solo = false;
 		luke = false;
-
-
-		
 
 		gameObj.charArray[0].whenClicked();
 
