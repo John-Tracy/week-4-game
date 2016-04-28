@@ -132,6 +132,59 @@ var gameObj = {
 
 $(document).ready(function() {
 
+// all variables and initial jQuery defined when DOM is ready ===============================================================
+		$("#jarhp").html('HP: ' + gameObj.charArray[0].health);
+		$("#darthhp").html('HP: ' + gameObj.charArray[1].health);
+		$("#hanhp").html('HP: ' + gameObj.charArray[2].health);
+		$("#lukehp").html('HP: ' + gameObj.charArray[3].health);
+		var darth = true;
+		var jarjar= true;
+		var solo = true;
+		var luke = true;
+		var timer;
+		var greyBar = $('#transparent');
+
+
+
+$('#resetGame').on('click', function() {
+	
+	$('#calmArea').append(greyBar);
+	// puts all character Divs where they started.
+	var darthRe = $('#darthDiv');
+	var lukeRe = $('#lukeDiv');
+	var soloRe = $('#soloDiv');
+	var jarRe = $('#jarDiv');
+	$('#transparent').append(darthRe, lukeRe, soloRe, jarRe);
+
+ //resets all hit points and attacks to default.
+	gameObj.charArray[0].health = 200;
+	gameObj.charArray[1].health = 200;
+	gameObj.charArray[2].health = 200;
+	gameObj.charArray[3].health = 200;
+
+	gameObj.charArray[0].attack = 5;
+	gameObj.charArray[1].attack = 4;
+	gameObj.charArray[2].attack = 3;
+	gameObj.charArray[3].attack = 2;
+
+// displays default hp in each div via HTML
+	$("#jarhp").html('HP: ' + gameObj.charArray[0].health);
+	$("#darthhp").html('HP: ' + gameObj.charArray[1].health);
+	$("#hanhp").html('HP: ' + gameObj.charArray[2].health);
+	$("#lukehp").html('HP: ' + gameObj.charArray[3].health);
+
+		darth = true;
+		jarjar= true;
+		solo = true;
+		luke = true;
+		clearInterval(timer);
+
+});
+
+
+ 
+
+
 // All functions for game play, (the math) if user chooses Jar Jar as thier choice. ==========================================================
 		// only if user is jarjar vs. darth vader
 	var jarVSdarth = function() {
@@ -448,18 +501,6 @@ var soloVSdarth = function() {
 			};
 
 
-// all variables and initial jQuery defined when DOM is ready ===============================================================
-		$("#jarhp").html('HP: ' + gameObj.charArray[0].health);
-		$("#darthhp").html('HP: ' + gameObj.charArray[1].health);
-		$("#hanhp").html('HP: ' + gameObj.charArray[2].health);
-		$("#lukehp").html('HP: ' + gameObj.charArray[3].health);
-		var darth = true;
-		var jarjar= true;
-		var solo = true;
-		var luke = true;
-		var timer;
-
-
 // user chooses jar jar click function-------------------------
 
 	$('#jarPic').on('click', function() {
@@ -507,7 +548,7 @@ var soloVSdarth = function() {
 
 
 
-// if user chooses darth vader click function----------------------
+// if user chooses darth vader click function------------------------------
 
 
 	$('#darthPic').on('click', function() {
@@ -617,11 +658,6 @@ var soloVSdarth = function() {
 		});
 		}
 	});
-
-
-
-
-
 
 });
 
